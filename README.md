@@ -12,7 +12,8 @@
 2. Login: [Azure Portal](https://portal.azure.com)
 
 ### Prepare Vulnerability Management Scanner
-<img width="890" alt="image" src="https://github.com/joshmadakor1/openvas/assets/39254979/8740ab1b-e972-4741-a7df-bdc7d883c24a">
+<img width="1544" alt="2" src="https://github.com/Hugoatlist444/Open-Vas-Lab/assets/95655080/52897735-b4fa-4a2d-839c-7c53d6a6e459">
+
 
 1. Go to [Azure Portal](https://portal.azure.com)
 2. Navigate to the Marketplace and search for "OpenVAS secured and supported by HOSSTED"
@@ -28,7 +29,8 @@
 8. Wait until the deployment of OpenVAS is complete.
 
 ### Create Client Virtual Machine and Make it Vulnerable
-<img width="752" alt="image" src="https://github.com/joshmadakor1/openvas/assets/39254979/493ed685-70f8-4260-84fb-037bd01c53fa">
+<img width="862" alt="file type" src="https://github.com/Hugoatlist444/Open-Vas-Lab/assets/95655080/a797d493-1cc7-4694-b14a-3fe9c007c283">
+
 
 1. Go to [Azure Portal](https://portal.azure.com)
 2. Search for Virtual Machines and create a new Virtual Machine.
@@ -52,7 +54,8 @@
    - Restart the VM.
 
 ### Configure OpenVAS to Perform First Unauthenticated Scan against our Vulnerable VM
-<img width="730" alt="image" src="https://github.com/joshmadakor1/openvas/assets/39254979/8b3ca917-86d7-404c-94f6-b6402d391af4">
+<img width="1116" alt="3" src="https://github.com/Hugoatlist444/Open-Vas-Lab/assets/95655080/dba0e0ae-ab6a-400a-befa-1e709bcfc184">
+
 
 1. Login to OpenVAS and navigate to Assets > Hosts > New Host.
 2. Add the Client VM PRIVATE IP Address.
@@ -67,7 +70,8 @@
 9. Take note of the Tabs, especially the "Results" tab.
 
 ### Make Configurations for Credentialed Scans (Within VM)
-<img width="508" alt="image" src="https://github.com/joshmadakor1/openvas/assets/39254979/2ce2ea53-b67b-4206-8050-fecce0a11c52">
+<img width="1012" alt="Screenshot 2023-10-21 at 7 26 22 PM" src="https://github.com/Hugoatlist444/Open-Vas-Lab/assets/95655080/854f1931-877f-4ee5-b90a-ca8805677a29">
+
 
 1. Disable Windows Firewall.
 2. Disable User Account Control.
@@ -83,7 +87,8 @@
 5. Restart the VM.
 
 ### Make Configurations for Credentialed Scans (OpenVAS)
-<img width="722" alt="image" src="https://github.com/joshmadakor1/openvas/assets/39254979/474cb714-19ad-4c99-8e60-945a2a12d7e5">
+<img width="1443" alt="Screenshot 2023-10-21 at 7 28 12 PM" src="https://github.com/Hugoatlist444/Open-Vas-Lab/assets/95655080/1ec6257f-2227-44c3-8e69-cab39d0832b8">
+
 
 1. Go to Configuration > Credentials > New Credential.
 2. Name / Comment: "Azure VM Credentials".
@@ -98,9 +103,11 @@
 11. Save.
 
 ### Execute Credentialed Scan against our Vulnerable Windows VM
-<img width="1126" alt="image" src="https://github.com/joshmadakor1/openvas/assets/39254979/83467078-e917-4eba-9757-745fe47b4ebf">
+<img width="861" alt="Screenshot 2023-10-21 at 7 31 05 PM" src="https://github.com/Hugoatlist444/Open-Vas-Lab/assets/95655080/2b018c1c-6d0f-4740-beb1-87281ae419b9">
 
-<img width="861" alt="image" src="https://github.com/joshmadakor1/openvas/assets/39254979/3b5cf494-829c-4eb0-bcfd-6d4372c97cd6">
+
+<img width="861" alt="Screenshot 2023-10-21 at 7 31 51 PM" src="https://github.com/Hugoatlist444/Open-Vas-Lab/assets/95655080/74bc1c68-6bb7-4bae-b813-cfd8322a3e8a">
+
 
 1. Within Greenbone / OpenVAS, go to Scans > Tasks.
 2. CLONE the "Scan - Azure Vulnerable VMs" Task and Edit it.
@@ -110,7 +117,8 @@
 6. Click the Play button to launch the new Credentialed Scan and wait for it to finish.
 
 ### Remediate Vulnerabilities
-<img width="799" alt="image" src="https://github.com/joshmadakor1/openvas/assets/39254979/6b3835dc-11b1-4e00-b7a5-baa8049182f7">
+<img width="1574" alt="Screenshot 2023-10-21 at 7 32 53 PM" src="https://github.com/Hugoatlist444/Open-Vas-Lab/assets/95655080/4f1aa45d-e190-4d79-85d4-c3f47db210b7">
+
 
 1. Log back into your Win10-Vulnerable VM.
 2. Uninstall Adobe Reader, VLC Player, and Firefox.
@@ -118,6 +126,7 @@
 4. Re-initiate the "Scan - Azure Vulnerable VMs - Credentialed" scan and observe the results.
 
 ### Verify Remediations
-<img width="1120" alt="image" src="https://github.com/joshmadakor1/openvas/assets/39254979/9efbd193-002a-49c2-9d9e-51f2cf1dc2af">
+<img width="1676" alt="Screenshot 2023-10-21 at 7 34 27 PM" src="https://github.com/Hugoatlist444/Open-Vas-Lab/assets/95655080/a6689b74-bd03-4975-9b7e-0c73df3e815d">
+
 
 1. Note that there are no longer Vulnerabilities for FireFox, VLC Player, or Adobe Reader!
